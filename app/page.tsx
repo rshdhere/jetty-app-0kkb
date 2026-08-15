@@ -18,8 +18,29 @@ export default function HomePage() {
 
       <FlappyBird />
 
-      <footer className="mt-8 text-center text-xs text-white/60">
-        Controls: Space / ↑ / tap · High score saved locally
+      <section className="mt-8 grid w-full max-w-[420px] gap-3 text-sm text-white/90 sm:grid-cols-3">
+        <div className="rounded-xl bg-white/10 px-3 py-3 backdrop-blur-sm">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-white/60">
+            Flap
+          </p>
+          <p className="mt-1 leading-snug">Space, ↑, or tap the playfield</p>
+        </div>
+        <div className="rounded-xl bg-white/10 px-3 py-3 backdrop-blur-sm">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-white/60">
+            Score
+          </p>
+          <p className="mt-1 leading-snug">Clear each pipe gap to earn a point</p>
+        </div>
+        <div className="rounded-xl bg-white/10 px-3 py-3 backdrop-blur-sm">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-white/60">
+            Survive
+          </p>
+          <p className="mt-1 leading-snug">Pipes speed up as your score climbs</p>
+        </div>
+      </section>
+
+      <footer className="mt-6 text-center text-xs text-white/60">
+        High score is saved in this browser
       </footer>
     </main>
   );
