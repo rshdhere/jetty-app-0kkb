@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "jetty-app-0kkb",
-  description: "make me a flappy bird game using nextjs",
+  title: "Flappy Bird — Next.js",
+  description: "A browser Flappy Bird game built with Next.js App Router",
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="min-h-screen antialiased">{children}</body>
     </html>
   );
 }
