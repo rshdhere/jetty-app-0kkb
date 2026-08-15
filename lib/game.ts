@@ -79,15 +79,20 @@ function collides(birdY: number, pipes: Pipe[]): boolean {
   return false;
 }
 
+export function pipeSpeedForScore(score: number): number {
+  return PIPE_SPEED + Math.min(1.6, score * 0.08);
+}
+
 export function tick(state: GameState, spawnPipe: boolean): GameState {
   if (state.status !== "playing") {
     return { ...state, frame: state.frame + 1 };
   }
 
+  const speed = pipeSpeedForScore(state.score);
   let birdY = state.birdY + state.velocity;
   const velocity = state.velocity + GRAVITY;
   let pipes = state.pipes
-    .map((p) => ({ ...p, x: p.x - PIPE_SPEED }))
+    .map((p) => ({ ...p, x: p.x - speed }))
     .filter((p) => p.x + PIPE_WIDTH > -20);
 
   if (spawnPipe) {
